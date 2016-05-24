@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+     <ui:composition template="/templates/tela.xhtml" >
+        <h:outputStylesheet name="estilo.css" library="css"/>
+        <ui:define name="corpo">
+            <h:form >
+            <div align="center" style="margin-top: 40px;">
+            	<p:growl id="msg" life="2000" />
+            	<div>
+            		<p:messages id="messages"  autoUpdate="true" closable="true"  />
+            		<p:panel styleClass="panel">
+            		<p:panelGrid columns="2" >
+            			<f:facet name="header">
+            				<h:outputLabel value="Cadastrar cliente" style="width: 899px;white-space: normal"/>
+            			</f:facet>
+	            				<p:outputLabel for="nome" value="Nome: "  />
+	            				<p:inputText id="nome" value="#{cadastrarClienteBean.cliente.cliNome}" maxlength="100" required="true" requiredMessage="Informe nome"/>
+		            			
+		            			<p:outputLabel for="cpf" value="CPF:" />
+		            			<p:inputMask id="cpf" value="#{cadastrarClienteBean.cliente.cliCpf}" mask="999.999.999-99" size="11" required="true" requiredMessage="Informe CPF"/> 
+		            			
+		            			<p:outputLabel for="idade" value="Idade: " />
+		            			<p:inputText id="idade" value="#{cadastrarClienteBean.cliente.cliIdade}" maxlength="2" size="2" required="true" requiredMessage="Informe idade" />
+		            			
+		            			<p:outputLabel for="tel" value="Telefone: "/>
+		            			<p:inputMask id="tel" value="#{cadastrarClienteBean.cliente.cliTelefone}" mask="(99)99999-9999" required="true"  requiredMessage="Informar telefone" />
+		            			
+		            			<p:outputLabel for="dtNascimento"  value="Dt. Nascimento: " />
+		            			<p:calendar id="dtNascimento" value="#{cadastrarClienteBean.cliente.cliDataNascimento}" required="true" requiredMessage="Informe data de nascimento" yearRange="1950:2016" locale="br" effect="fold" pattern="dd/mm/yyyy"  maxlength="8" navigator="true"/>
+		            			
+		            			<p:outputLabel for="rua" value="Rua: " />
+		            			<p:inputText id="rua" value="#{cadastrarClienteBean.cliente.endereco.rua}" maxlength="100" required="true" requiredMessage="Informe Endereço"/>
+		            			
+		            			<p:outputLabel for="estado" value="Estado:" />
+		            			<p:selectOneMenu id="estado" value="#{cadastrarClienteBean.idEstado}"  required="true" requiredMessage="Informar estado"> 
+	 	            				<p:ajax update="cidade" listener="#{cadastrarClienteBean.carregaCidades()}" /> 
+		            				<f:selectItem itemLabel="..."  noSelectionOption="true"/> 
+		            				<f:selectItems value="#{cadastrarClienteBean.estados}" var="estado" itemLabel="#{estado.estadoNomeEsigla}" itemValue="#{estado.id}"/> 
+	 	            			</p:selectOneMenu>
+		            			
+		            			<p:outputLabel for="cidade" value="Cidade: " />
+		            			<p:selectOneMenu id="cidade" value="#{cadastrarClienteBean.cliente.endereco.cidade}" required="true" requiredMessage="Informar cidade" >
+		            				<f:selectItem itemLabel="..."  noSelectionOption="true"/>
+		            				<f:selectItems value="#{cadastrarClienteBean.cidades}" var="cidade" itemLabel="#{cidade.cidadeNome}"
+		            				               itemValue="#{cidade.cidadeNome}"/>
+		            			</p:selectOneMenu>
+		            			
+		            			<p:outputLabel for="cep" value="CEP: " />
+		            			<p:inputMask id="cep" value="#{cadastrarClienteBean.cliente.endereco.cep}" mask="99999-999" maxlength="8" size="8" required="true" requiredMessage="Informe CEP"/>
+            		</p:panelGrid>
+            		<p:panelGrid>
+            				<p:separator />
+	            			<p:commandButton value="Cadastrar" process="@form" action="#{cadastrarClienteBean.salvarCliente}"  icon="fa fa-check-square-o"/>
+	            			<p:commandButton value="Cancelar" process="@form" type="reset" icon="fa fa-times-circle"/>
+            		</p:panelGrid>
+            		</p:panel>
+            	</div>
+            </div> 
+            </h:form>
+        </ui:define>
+   </ui:composition>
+</html>
+

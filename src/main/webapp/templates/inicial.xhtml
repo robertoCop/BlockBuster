@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+   
+    <h:head>
+    	<link href="#{request.contextPath}/resources/imagens/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    	
+        <h:outputStylesheet name="estilo.css" library="css" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <title>Cine video</title>
+        <div align="center">
+            <ui:insert name="titulo">
+                <h:graphicImage height="150" library="imagens" name="titulo.jpg" />
+            </ui:insert>
+        </div>
+    </h:head>
+    <h:body styleClass="fundo">  
+    	<h:form>
+	    	<p:ajaxStatus onstart="PF('carregar').show();" onsuccess="PF('carregar').hide();"></p:ajaxStatus>
+	        <p:dialog  modal="true" widgetVar="carregar" draggable="false" closable="false" resizable="false" showHeader="false">
+	            <h:graphicImage library="imagens" name="loading.gif" />
+	        </p:dialog>
+        <div id="container">
+            <div id="titulo" >    
+            </div>
+            <div id="corpo">
+                <ui:insert name="corpo">
+                   
+                </ui:insert>
+            </div>
+            <div id="rodape">
+                    <ui:insert name="rodape" >
+                        <div align="center" class="rodape">
+                            <p/>
+                            <p:outputLabel value="Desenvolvido por: Roberto B. Junior"  style="font-weight: bold;"/>
+                            <br />
+                            <br />
+                            <p:commandButton onclick="facebook();"  icon="fa fa-facebook-square" ajax="true" title="Facebook desenvolvedor" />
+                            <p:commandButton onclick="gitHub();"  icon="fa fa-github-square" ajax="true" title="GitHub desenvolvedor"/>
+                            <p:commandButton onclick="linkedin();"  icon="fa fa-linkedin-square" ajax="true" title="Linkedin desenvolvedor"/>
+                        </div>
+                    </ui:insert>
+            </div>
+        </div>
+        </h:form>
+        <script type="text/javascript">
+			function facebook(){
+				window.open("https://www.facebook.com/robertobanasewicz");
+			}
+			function gitHub(){
+				window.open("https://github.com/robertoCop");
+			}
+			function linkedin(){
+				window.open("https://br.linkedin.com/in/robertobanasewiczjr");
+			}
+        </script>
+    </h:body>
+</html>
+
