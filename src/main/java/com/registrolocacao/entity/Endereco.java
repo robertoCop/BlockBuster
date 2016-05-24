@@ -10,12 +10,9 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
 
 /**
  *
@@ -28,9 +25,8 @@ public class Endereco implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-    @Column(name = "cli_id")
-	@GeneratedValue(generator = "fk_endereco_cod_cliente")
-	@GenericGenerator(name = "fk_endereco_cod_cliente", strategy = "foreign", parameters = {@Parameter(name = "property", value = "cliente")})
+    @Column(name = "endereco_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idEndereco;
     
     @Column(name = "rua", nullable = false, length=100)
@@ -44,9 +40,6 @@ public class Endereco implements Serializable{
     
     @Column(name = "cep", nullable=false, length = 9)
     private String cep;
-     
-    @OneToOne(mappedBy = "endereco")
-    private Cliente cliente;
 
     /**
      * @return the idEndereco
@@ -118,19 +111,5 @@ public class Endereco implements Serializable{
         this.cep = cep;
     }
 
-    /**
-     * @return the cliente
-     */
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    /**
-     * @param cliente the cliente to set
-     */
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-    
     
 }
