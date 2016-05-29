@@ -2,6 +2,7 @@ package com.registrolocacao.beans.cliente;
 
 import java.util.List;
 
+import com.registrolocacao.daoFactory.DAOFactory;
 import com.registrolocacao.entity.Cliente;
 import com.registrolocacao.entity.estadoCidade.Cidade;
 import com.registrolocacao.entity.estadoCidade.Estado;
@@ -38,5 +39,13 @@ public class CadastrarClienteRN {
 	
 	public boolean validaClientePorCPF(String cpf){
 		return this.cli.validaCliente(cpf);
+	}
+	
+	public List<Cliente> buscaClientesPorCPf(String cpf){
+		return this.cli.buscaClientePorCPF(cpf);
+	}
+	
+	public Cliente buscaClientePorID(Integer id){
+		return this.cli.buscarCliente(id);
 	}
 }

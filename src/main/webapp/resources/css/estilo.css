@@ -12,12 +12,12 @@
 
 /*Redimensiona Componentes PrimeFaces*/
  .ui-widget{     
-            font-size: 13px;     
+    font-size: 14px;     
  }
  
  .panel{
- 	width: 60%;
- 	height: 60%;
+ 	width: 80%;
+ 	height: 80%;
  }
  
  

@@ -1,5 +1,7 @@
 package com.registrolocacao.interfaces.cliente;
 
+import java.util.List;
+
 import com.registrolocacao.entity.Cliente;
 
 public interface ClienteDados {
@@ -8,9 +10,9 @@ public interface ClienteDados {
 	
 	public boolean validaCliente(String cpf);
 	
-	public Cliente buscarCliente(String cpf);
+	public Cliente buscarCliente(Integer id);
 	
 	public void excluirCliente(Cliente cli);
 	
-	
+	public List<Cliente> buscaClientePorCPF(String cpf);
 }

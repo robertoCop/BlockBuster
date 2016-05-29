@@ -52,7 +52,7 @@ public class CadastrarClienteBean implements Serializable{
 			return "cadastroCliente";
 		}
 	}
-
+	
 	public void carregaEstados(){
 		estados = clienteRN.buscarEstados();
 	}

@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:p="http://primefaces.org/ui">
      <ui:composition template="/templates/tela.xhtml" >
         <h:outputStylesheet name="estilo.css" library="css"/>
         <ui:define name="corpo">
@@ -28,7 +28,7 @@
 		            			<p:inputText id="idade" value="#{cadastrarClienteBean.cliente.cliIdade}" maxlength="2" size="2" required="true" requiredMessage="Informe idade" />
 		            			
 		            			<p:outputLabel for="tel" value="Telefone: "/>
-		            			<p:inputMask id="tel" value="#{cadastrarClienteBean.cliente.cliTelefone}" mask="(99)99999-9999" required="true"  requiredMessage="Informar telefone" />
+		            			<p:inputMask id="tel" value="#{cadastrarClienteBean.cliente.cliTelefone}" mask="(99)9999-9999" required="true"  requiredMessage="Informar telefone" />
 		            			
 		            			<p:outputLabel for="dtNascimento"  value="Dt. Nascimento: " />
 		            			<p:calendar id="dtNascimento" value="#{cadastrarClienteBean.cliente.cliDataNascimento}" required="true" requiredMessage="Informe data de nascimento" yearRange="1950:2016" locale="br" effect="fold" pattern="dd/mm/yyyy"  maxlength="8" navigator="true"/>
