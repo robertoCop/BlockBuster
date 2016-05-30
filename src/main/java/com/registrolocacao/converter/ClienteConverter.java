@@ -33,8 +33,7 @@ public class ClienteConverter implements Converter{
 		if(cliente.getCliId() == null){
 			return "";
 		}else{
-			 final Cliente cli =  (Cliente) value;
-			 return cli.getCliId().toString();
+			 return cliente.getCliId().toString();
 		}
 	}
 
