@@ -10,6 +10,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
+import com.registrolocacao.beans.cidadesEstados.CidadesEstadosRN;
 import com.registrolocacao.entity.Cliente;
 import com.registrolocacao.entity.Endereco;
 import com.registrolocacao.entity.estadoCidade.Cidade;
@@ -21,7 +22,6 @@ public class CadastrarClienteBean implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	private String idEstado;
-	private CadastrarClienteRN clienteRN = new CadastrarClienteRN();
 	private Cliente cliente;
 	private String cpf;
 	private List<Estado> estados = new ArrayList<Estado>();
@@ -42,11 +42,13 @@ public class CadastrarClienteBean implements Serializable{
 	
 	public String salvarCliente(){
 		FacesContext context = FacesContext.getCurrentInstance();
+		ClienteRN clienteRN = new ClienteRN();
 		if(clienteRN.validaClientePorCPF(cliente.getCliCpf())){
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN,"Cliente já cadastrado", null));
 			return "cadastroCliente";
 		}else{
-			cliente.getEndereco().setEstado(clienteRN.buscaNomeEstadoPorId(Integer.parseInt(idEstado)));
+			CidadesEstadosRN cidadeEstRN = new CidadesEstadosRN();
+			cliente.getEndereco().setEstado(cidadeEstRN.buscaNomeEstadoPorId(Integer.parseInt(idEstado)));
 			clienteRN.salvarCliente(cliente);
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Cliente salvo com sucesso", null));
 			return "cadastroCliente";
@@ -54,12 +56,14 @@ public class CadastrarClienteBean implements Serializable{
 	}
 	
 	public void carregaEstados(){
-		estados = clienteRN.buscarEstados();
+		CidadesEstadosRN cidadeEstRN = new CidadesEstadosRN();
+		estados = cidadeEstRN.buscarEstados();
 	}
 	
 	public void carregaCidades(){
 		if(idEstado != null){
-			cidades = clienteRN.buscarCidadePorEstado(Integer.valueOf(idEstado));
+			CidadesEstadosRN cidadeEstRN = new CidadesEstadosRN();
+			cidades = cidadeEstRN.buscarCidadePorEstado(Integer.valueOf(idEstado));
 			setCampoCidades(false);
 		}else{
 			setCampoCidades(true);

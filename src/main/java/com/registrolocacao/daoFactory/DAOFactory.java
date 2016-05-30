@@ -26,7 +26,7 @@ public class DAOFactory {
 		return impl;
 	}
 	
-	public static ClienteDados cadastrarCliente(){
+	public static ClienteDados criarClienteImpl(){
 		ClienteCadastroImpl impl = new ClienteCadastroImpl();
 		sessao = HibernateUtil.getSessionFactory().getCurrentSession();
 		if(!sessao.isOpen()){

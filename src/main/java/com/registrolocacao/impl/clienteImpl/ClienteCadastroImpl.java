@@ -36,7 +36,9 @@ public class ClienteCadastroImpl implements ClienteDados{
 		}catch(HibernateException e){
 			System.out.println("Erro ao salvar cliente" + e.getMessage());
 		}finally{
-			sessao.close();
+			if(sessao.isOpen()){
+				sessao.close();
+			}
 		}
 	}
 

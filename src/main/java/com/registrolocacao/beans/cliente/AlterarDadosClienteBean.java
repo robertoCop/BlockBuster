@@ -11,6 +11,7 @@ import javax.faces.context.FacesContext;
 
 import org.primefaces.event.SelectEvent;
 
+import com.registrolocacao.beans.cidadesEstados.CidadesEstadosRN;
 import com.registrolocacao.entity.Cliente;
 import com.registrolocacao.entity.estadoCidade.Cidade;
 import com.registrolocacao.entity.estadoCidade.Estado;
@@ -22,7 +23,6 @@ public class AlterarDadosClienteBean implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private String idEstado;
-	private CadastrarClienteRN cli = new CadastrarClienteRN();
 	private Cliente clienteCadastrado = new Cliente();
 	private List<Estado> estados = new ArrayList<Estado>();
 	private List<Cidade> cidades = new ArrayList<Cidade>();
@@ -40,22 +40,26 @@ public class AlterarDadosClienteBean implements Serializable{
 	}
 	
 	public List<Cliente> buscaClientePorCpf(String cpf){
+		ClienteRN cli = new ClienteRN();
 		return cli.buscaClientesPorCPf(cpf);
 	}
 
 	public void carregaEstados(){
-		estados = cli.buscarEstados();
+		CidadesEstadosRN cidadadesEstRN = new CidadesEstadosRN();
+		estados = cidadadesEstRN.buscarEstados();
 	}
 	
 	public void carregaCidades(){
 		if(idEstado != null){
-			cidades = cli.buscarCidadePorEstado(Integer.valueOf(idEstado));
+			CidadesEstadosRN cidadadesEstRN = new CidadesEstadosRN();
+			cidades = cidadadesEstRN.buscarCidadePorEstado(Integer.valueOf(idEstado));
 		}
 	}
 	
 	public void salvarAlteracao(){
+		ClienteRN cli = new ClienteRN();
 		FacesContext context = FacesContext.getCurrentInstance();
-		this.cli.salvarCliente(clienteCadastrado);
+		cli.salvarCliente(clienteCadastrado);
 		context.addMessage("", new FacesMessage(FacesMessage.SEVERITY_INFO, "Alteração salva com sucesso!", ""));
 	}
 	
@@ -80,17 +84,6 @@ public class AlterarDadosClienteBean implements Serializable{
 	public void setIdEstado(String idEstado) {
 		this.idEstado = idEstado;
 	}
-
-
-	public CadastrarClienteRN getCli() {
-		return cli;
-	}
-
-
-	public void setCli(CadastrarClienteRN cli) {
-		this.cli = cli;
-	}
-
 
 	public List<Estado> getEstados() {
 		return estados;

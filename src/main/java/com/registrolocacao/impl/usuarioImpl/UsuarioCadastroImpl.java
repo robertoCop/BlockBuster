@@ -29,9 +29,6 @@ import org.hibernate.criterion.Restrictions;
 @SessionScoped
 public class UsuarioCadastroImpl implements Serializable{
 
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private Session sessao = null;
     private Usuario usuLogado = null;
