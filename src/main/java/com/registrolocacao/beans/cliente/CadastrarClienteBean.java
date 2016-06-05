@@ -10,7 +10,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
-import com.registrolocacao.beans.cidadesEst.CidadeEstadoRN;
 import com.registrolocacao.beans.cidadesEstados.CidadesEstadosRN;
 import com.registrolocacao.entity.Cliente;
 import com.registrolocacao.entity.Endereco;
@@ -48,7 +47,7 @@ public class CadastrarClienteBean implements Serializable{
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN,"Cliente já cadastrado", null));
 			return "cadastroCliente";
 		}else{
-			CidadeEstadoRN cidadeEstRN = new CidadeEstadoRN();
+			CidadesEstadosRN cidadeEstRN = new CidadesEstadosRN();
 			cliente.getEndereco().setEstado(cidadeEstRN.buscaNomeEstadoPorId(Integer.parseInt(idEstado)));
 			clienteRN.salvarCliente(cliente);
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Cliente salvo com sucesso", null));
@@ -57,7 +56,7 @@ public class CadastrarClienteBean implements Serializable{
 	}
 	
 	public void carregaEstados(){
-		CidadeEstadoRN cidadeEstRN = new CidadeEstadoRN();
+		CidadesEstadosRN cidadeEstRN = new CidadesEstadosRN();
 		estados = cidadeEstRN.buscarEstados();
 	}
 	
