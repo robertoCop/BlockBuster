@@ -42,7 +42,7 @@ public class CadastrarClienteBean implements Serializable{
 	
 	public String salvarCliente(){
 		FacesContext context = FacesContext.getCurrentInstance();
-		CadastrarClienteRN clienteRN = new CadastrarClienteRN();
+		ClienteRN clienteRN = new ClienteRN();
 		if(clienteRN.validaClientePorCPF(cliente.getCliCpf())){
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN,"Cliente já cadastrado", null));
 			return "cadastroCliente";

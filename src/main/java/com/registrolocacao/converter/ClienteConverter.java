@@ -7,13 +7,13 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
 
-import com.registrolocacao.beans.cliente.CadastrarClienteRN;
+import com.registrolocacao.beans.cliente.ClienteRN;
 import com.registrolocacao.entity.Cliente;
 
 @FacesConverter(forClass = Cliente.class)
 public class ClienteConverter implements Converter{
 	
-	CadastrarClienteRN clienteRN = new CadastrarClienteRN();
+	ClienteRN clienteRN = new ClienteRN();
 
 	@Override
 	public Object getAsObject(FacesContext context, UIComponent component, String value) {
