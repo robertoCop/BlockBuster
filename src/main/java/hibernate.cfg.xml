@@ -23,5 +23,8 @@
     <mapping class="com.registrolocacao.entity.Usuario" />
     <mapping class="com.registrolocacao.entity.estadoCidade.Estado" />
     <mapping class="com.registrolocacao.entity.estadoCidade.Cidade" />
+    <mapping class="com.registrolocacao.entity.filme.Filmes" />
+    <mapping class="com.registrolocacao.entity.filme.GeneroFilme" />
+    
   </session-factory>
 </hibernate-configuration>

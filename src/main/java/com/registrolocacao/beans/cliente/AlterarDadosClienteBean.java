@@ -111,7 +111,5 @@ public class AlterarDadosClienteBean implements Serializable{
 	public void setDesabilitaCampos(boolean desabilitaCampos) {
 		this.desabilitaCampos = desabilitaCampos;
 	}
-	
-	
 
 }

@@ -6,15 +6,18 @@
 package com.registrolocacao.entity;
 
 import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 import org.hibernate.annotations.NaturalId;
+
+import com.registrolocacao.enums.TipoCadastroEnum;
 
 /**
  *
@@ -24,9 +27,6 @@ import org.hibernate.annotations.NaturalId;
 @Table(name = "usu_sistema")
 public class Usuario implements Serializable{
       
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -50,9 +50,9 @@ public class Usuario implements Serializable{
     @Column(name = "user_senha", nullable = false, length = 15)
     private String userSenha;
     
-    @OneToOne
-    @JoinColumn(name = "id_tipo_cad")
-    private TipoCadastro tpCadastro;
+    @Column(name = "id_tipo_cad")
+    @Enumerated
+    private TipoCadastroEnum tpCadastro;
 
     /**
      * @return the userId
@@ -140,18 +140,17 @@ public class Usuario implements Serializable{
         this.userSenha = userSenha;
     }
 
+	public TipoCadastroEnum getTpCadastro() {
+		return tpCadastro;
+	}
+
+	public void setTpCadastro(TipoCadastroEnum tpCadastro) {
+		this.tpCadastro = tpCadastro;
+	}
+
     /**
      * @return the tpCadastro
      */
-    public TipoCadastro getTpCadastro() {
-        return tpCadastro;
-    }
-
-    /**
-     * @param tpCadastro the tpCadastro to set
-     */
-    public void setTpCadastro(TipoCadastro tpCadastro) {
-        this.tpCadastro = tpCadastro;
-    }    
+    
     
 }
