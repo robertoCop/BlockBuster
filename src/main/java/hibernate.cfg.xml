@@ -19,7 +19,6 @@
     
     <mapping class="com.registrolocacao.entity.Cliente" />
     <mapping class="com.registrolocacao.entity.Endereco" />
-    <mapping class="com.registrolocacao.entity.TipoCadastro" />
     <mapping class="com.registrolocacao.entity.Usuario" />
     <mapping class="com.registrolocacao.entity.estadoCidade.Estado" />
     <mapping class="com.registrolocacao.entity.estadoCidade.Cidade" />

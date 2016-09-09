@@ -11,6 +11,7 @@ import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -63,7 +64,7 @@ public class Cliente implements Serializable{
     private Endereco endereco;
     
     @Column(name = "id_tipo_cad")
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private TipoCadastroEnum tpCadastro;
 
     /**
