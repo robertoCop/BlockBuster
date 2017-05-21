@@ -16,6 +16,8 @@ public class TesteConexao {
      public static void main(String[] args) {
         Session sessao = null;
         
+        //tESTE DE COMMIT PELO ECLIPSE
+        
         sessao = HibernateUtil.getSessionFactory().openSession();
         System.out.println("*****************CONECTOU BANCO****************");
         sessao.close();
