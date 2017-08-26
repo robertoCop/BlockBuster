@@ -6,26 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9bc7b634-3565-4f08-9b85-81c77fbef1b2" name="Default" comment="criação de constants para redirecionamento de views">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/META-INF/application.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/registrolocacao/constants/Constants.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/registrolocacao/beans/cliente/CadastrarClienteBean.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/BlockBuster/BlockBuster/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/BlockBuster/BlockBuster/pom.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/BlockBuster.iml" afterPath="$PROJECT_DIR$/.idea/BlockBuster.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="9bc7b634-3565-4f08-9b85-81c77fbef1b2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/registrolocacao/beans/usuario/UsuarioAcessoBean.java" afterPath="$PROJECT_DIR$/src/main/java/com/registrolocacao/beans/usuario/UsuarioAcessoBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/registrolocacao/conexao/HibernateUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/registrolocacao/conexao/HibernateUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/registrolocacao/filtro/FiltroUsuario.java" afterPath="$PROJECT_DIR$/src/main/java/com/registrolocacao/filtro/FiltroUsuario.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -582,7 +564,7 @@
       <workItem from="1503762194225" duration="731000" />
       <workItem from="1503762954788" duration="406000" />
       <workItem from="1503763381104" duration="2489000" />
-      <workItem from="1503783672966" duration="2828000" />
+      <workItem from="1503783672966" duration="2864000" />
     </task>
     <task id="LOCAL-00001" summary="commit by IntelliJ teste">
       <created>1503760936320</created>
@@ -598,11 +580,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503761044680</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="criação de constants para redirecionamento de views">
+      <created>1503786518967</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1503786518967</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7784000" />
+    <option name="totallyTimeSpent" value="7820000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
