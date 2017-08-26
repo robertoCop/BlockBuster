@@ -11,6 +11,7 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import com.registrolocacao.beans.cidadesEstados.CidadesEstadosRN;
+import com.registrolocacao.constants.Constants;
 import com.registrolocacao.entity.Cliente;
 import com.registrolocacao.entity.Endereco;
 import com.registrolocacao.entity.estadoCidade.Cidade;
@@ -44,14 +45,14 @@ public class CadastrarClienteBean implements Serializable{
 		FacesContext context = FacesContext.getCurrentInstance();
 		ClienteRN clienteRN = new ClienteRN();
 		if(clienteRN.validaClientePorCPF(cliente.getCliCpf())){
-			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN,"Cliente j· cadastrado", null));
-			return "cadastroCliente";
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN,"Cliente j√° cadastrado", null));
+			return Constants.view.CADASTRO_PAGE;
 		}else{
 			CidadesEstadosRN cidadeEstRN = new CidadesEstadosRN();
 			cliente.getEndereco().setEstado(cidadeEstRN.buscaNomeEstadoPorId(Integer.parseInt(idEstado)));
 			clienteRN.salvarCliente(cliente);
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Cliente salvo com sucesso", null));
-			return "cadastroCliente";
+			return Constants.view.CADASTRO_PAGE;
 		}
 	}
 	

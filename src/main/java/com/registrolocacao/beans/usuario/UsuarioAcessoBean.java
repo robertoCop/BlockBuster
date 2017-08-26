@@ -5,6 +5,7 @@
  */
 package com.registrolocacao.beans.usuario;
 
+import com.registrolocacao.constants.Constants;
 import com.registrolocacao.entity.Usuario;
 import com.registrolocacao.impl.usuarioImpl.UsuarioCadastroImpl;
 
@@ -41,20 +42,20 @@ public class UsuarioAcessoBean implements Serializable{
         FacesContext msg  = FacesContext.getCurrentInstance();
         if("".equals(this.getLogin()) && "".equals(this.getSenha())){
         	msg.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Favor informar login e senha", ""));
-        	return "login.xhtml?faces-redirect=true";
+        	return Constants.view.LOGIN_PAGE_REDIRECT;
         }else if("".equals(this.getLogin()) || this.getLogin() == null){
             msg.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Favor informar login",""));
-            return "login.xhtml?faces-redirect=true";
+            return Constants.view.LOGIN_PAGE_REDIRECT;
         }else if("".equals(this.getSenha()) || this.getSenha() == null){
             msg.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Favor informar senha",""));
-            return "login.xhtml?faces-redirect=true";
+            return Constants.view.LOGIN_PAGE_REDIRECT;
         }else{
             usuario = usu.buscarUsuario(login, senha);
             if(usuario != null){
             	FacesContext.getCurrentInstance().getExternalContext().redirect("X01.jsf");
             }else{
-            	msg.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Usuario n„o cadastrado", ""));
-            	return "login.xhtml?faces-redirect=true";
+            	msg.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Usuario n√£o cadastrado", ""));
+            	return Constants.view.LOGIN_PAGE_REDIRECT;
             }
             
         }     

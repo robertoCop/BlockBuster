@@ -5,6 +5,7 @@
  */
 package com.registrolocacao.conexao;
 
+import com.registrolocacao.constants.Constants;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -20,7 +21,7 @@ public class HibernateUtil {
     private static SessionFactory carregarConexao() {
         
         try{
-            Configuration config = new Configuration().configure("hibernate.cfg.xml");
+            Configuration config = new Configuration().configure(Constants.conf.HIBERNATE_CONF_XML);
             StandardServiceRegistryBuilder registro = new StandardServiceRegistryBuilder();
             registro.applySettings(config.getProperties()).build();
             StandardServiceRegistry servico = registro.build();

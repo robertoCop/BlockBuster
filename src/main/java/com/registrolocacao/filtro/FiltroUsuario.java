@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.registrolocacao.constants.Constants;
 import org.hibernate.SessionFactory;
 
 import com.registrolocacao.conexao.HibernateUtil;
@@ -38,13 +39,13 @@ public class FiltroUsuario implements Filter{
 		
 		String paginaCorrente = ((HttpServletRequest)request).getServletPath();
 		
-		String paginaLogin = "/views/login.jsf";
+		String paginaLogin = Constants.view.LOGIN_PAGE;
 		
 		final Usuario usuLogado = (Usuario)httpSession.getAttribute("usuario");
 
 		if(!paginaCorrente.contains(paginaLogin)){
 			if(usuLogado == null){
-				httpServletResponse.sendRedirect("login.jsf");
+				httpServletResponse.sendRedirect(Constants.view.LOGIN_REDIRECT);
 			}else{
 				chain.doFilter(request, response);
 			}
