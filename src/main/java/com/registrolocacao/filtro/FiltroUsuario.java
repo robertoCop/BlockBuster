@@ -41,7 +41,7 @@ public class FiltroUsuario implements Filter{
 		
 		String paginaLogin = Constants.view.LOGIN_PAGE;
 		
-		final Usuario usuLogado = (Usuario)httpSession.getAttribute("usuario");
+		final Usuario usuLogado = (Usuario)httpSession.getAttribute(Constants.session.USER_SESSION);
 
 		if(!paginaCorrente.contains(paginaLogin)){
 			if(usuLogado == null){

@@ -9,6 +9,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
+import com.registrolocacao.constants.Constants;
 import org.primefaces.event.SelectEvent;
 
 import com.registrolocacao.beans.cidadesEstados.CidadesEstadosRN;
@@ -17,7 +18,7 @@ import com.registrolocacao.entity.estadoCidade.Cidade;
 import com.registrolocacao.entity.estadoCidade.Estado;
 
 @ViewScoped
-@ManagedBean(name = "alterarClienteBean")
+@ManagedBean(name = Constants.beans.USER_ALTER_BEAN)
 public class AlterarDadosClienteBean implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -60,7 +61,7 @@ public class AlterarDadosClienteBean implements Serializable{
 		ClienteRN cli = new ClienteRN();
 		FacesContext context = FacesContext.getCurrentInstance();
 		cli.salvarCliente(clienteCadastrado);
-		context.addMessage("", new FacesMessage(FacesMessage.SEVERITY_INFO, "Alteração salva com sucesso!", ""));
+		context.addMessage("", new FacesMessage(FacesMessage.SEVERITY_INFO, "Alteraï¿½ï¿½o salva com sucesso!", ""));
 	}
 	
 	public void cancelarAltaracao(){

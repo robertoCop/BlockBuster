@@ -5,7 +5,7 @@
       <configuration>
         <datasource-map>
           <unit-entry name="hibernate.cfg.xml" value="1e23f3c6-99d9-4d4c-a4fd-892353971536" />
-          <unit-entry name="src:main:webapp:WEB-INF:classes:hibernate.cfg.xml" />
+          <unit-entry name="src:main:webapp:WEB-INF:classes:hibernate.cfg.xml" value="98c8a20c-7e49-4516-8c02-64fd1b712bab" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/java/com/registrolocacao/conexao/hibernate.cfg.xml" />

@@ -22,7 +22,7 @@ import javax.faces.context.FacesContext;
  *
  * @author Roberto_cop
  */
-@ManagedBean(name = "usuAcessoBean")
+@ManagedBean(name = Constants.beans.USUARIO_ACCESS_BEAN)
 @RequestScoped
 public class UsuarioAcessoBean implements Serializable{
     

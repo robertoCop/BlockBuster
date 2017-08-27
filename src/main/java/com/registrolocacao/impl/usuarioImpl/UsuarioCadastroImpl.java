@@ -6,6 +6,7 @@
 package com.registrolocacao.impl.usuarioImpl;
 
 import com.registrolocacao.conexao.HibernateUtil;
+import com.registrolocacao.constants.Constants;
 import com.registrolocacao.entity.Usuario;
 
 import java.io.Serializable;
@@ -25,7 +26,7 @@ import org.hibernate.criterion.Restrictions;
  * @author Roberto_cop
  */
 
-@ManagedBean(name = "usuarioBean")
+@ManagedBean(name = Constants.beans.USUARIO_BEAN)
 @SessionScoped
 public class UsuarioCadastroImpl implements Serializable{
 
@@ -47,7 +48,7 @@ public class UsuarioCadastroImpl implements Serializable{
         
         HttpServletRequest req =(HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
         HttpSession httpSession = req.getSession(true);
-        httpSession.setAttribute("usuario", usuLogado);
+        httpSession.setAttribute(Constants.session.USER_SESSION, usuLogado);
         
         return usuLogado;
     }
@@ -55,7 +56,7 @@ public class UsuarioCadastroImpl implements Serializable{
     public String logoffUsusario(){
     	HttpSession sessaoLogada = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
     	sessaoLogada.invalidate();
-    	return "/views/login.xhtml?faces-redirect=true";
+    	return Constants.view.LOGGOFF_PAGE;
     }
 
     /**

@@ -18,7 +18,7 @@ import com.registrolocacao.entity.estadoCidade.Cidade;
 import com.registrolocacao.entity.estadoCidade.Estado;
 
 @ViewScoped
-@ManagedBean(name = "cadastrarClienteBean")
+@ManagedBean(name = Constants.beans.CAD_CLIENTE_BEAN)
 public class CadastrarClienteBean implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
