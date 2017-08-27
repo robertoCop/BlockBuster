@@ -7,15 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bc7b634-3565-4f08-9b85-81c77fbef1b2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/BlockBuster.iml" afterPath="$PROJECT_DIR$/.idea/BlockBuster.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/META-INF/application.xml" afterPath="$PROJECT_DIR$/META-INF/application.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/registrolocacao/beans/cliente/AlterarDadosClienteBean.java" afterPath="$PROJECT_DIR$/src/main/java/com/registrolocacao/beans/cliente/AlterarDadosClienteBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/registrolocacao/beans/cliente/CadastrarClienteBean.java" afterPath="$PROJECT_DIR$/src/main/java/com/registrolocacao/beans/cliente/CadastrarClienteBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/registrolocacao/beans/usuario/UsuarioAcessoBean.java" afterPath="$PROJECT_DIR$/src/main/java/com/registrolocacao/beans/usuario/UsuarioAcessoBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/registrolocacao/constants/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/com/registrolocacao/constants/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/registrolocacao/filtro/FiltroUsuario.java" afterPath="$PROJECT_DIR$/src/main/java/com/registrolocacao/filtro/FiltroUsuario.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/registrolocacao/impl/usuarioImpl/UsuarioCadastroImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/registrolocacao/impl/usuarioImpl/UsuarioCadastroImpl.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -566,7 +558,7 @@
       <workItem from="1503762954788" duration="406000" />
       <workItem from="1503763381104" duration="2489000" />
       <workItem from="1503783672966" duration="3714000" />
-      <workItem from="1503865536935" duration="1094000" />
+      <workItem from="1503865536935" duration="1101000" />
     </task>
     <task id="LOCAL-00001" summary="commit by IntelliJ teste">
       <created>1503760936320</created>
@@ -610,11 +602,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503866628627</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="criação de de novas constantes">
+      <created>1503866642835</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1503866642835</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9764000" />
+    <option name="totallyTimeSpent" value="9771000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
