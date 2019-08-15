@@ -45,10 +45,12 @@ public class UsuarioCadastroImpl implements Serializable{
         busca.add(Restrictions.eq("userSenha", senha));
         
         usuLogado = (Usuario)busca.uniqueResult();
-        
-        HttpServletRequest req =(HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
-        HttpSession httpSession = req.getSession(true);
-        httpSession.setAttribute(Constants.session.USER_SESSION, usuLogado);
+
+        if(usuLogado != null) {
+            HttpServletRequest req = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+            HttpSession httpSession = req.getSession(true);
+            httpSession.setAttribute(Constants.session.USER_SESSION, usuLogado);
+        }
         
         return usuLogado;
     }
